@@ -59,10 +59,8 @@ tables:
 ## Future Plans
 
 - RESTful HTTP API for remote integration
-- Web dashboard for monitoring sync status
-- Support for different data synchronization patterns
-- Plugin system for custom server integrations
+- Pre built server agents
 
 ## License
 
-See the LICENSE file for details.
+MIT License, see LICENSE file for more info
