@@ -1,15 +1,14 @@
 from dotenv import load_dotenv
-import mysql.connector
-import os
+import yaml
+from modules.database import check_tables_exist
 
-#setup
 load_dotenv()
 
-db = mysql.connector.connect(
-    host=os.getenv("DB_HOST"),
-    user=os.getenv("DB_USER"),
-    password=os.getenv("DB_PASSWORD")
-    )
-
+def load_config():
+    with open('config.yml', 'r') as file:
+        return yaml.safe_load(file)
 
 if __name__ == "__main__":
+    config = load_config()
+    tables = config['tables']
+    check_tables_exist(tables)
